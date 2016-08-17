@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Excuse Generator</string>
+    <string name="name_hint">Введите имя, от кого отмазываемся</string>
+    <string name="exuse_button_text">Получить отмазку</string>
+    <string name="copy_button_text">Скопировать</string>
+</resources>
