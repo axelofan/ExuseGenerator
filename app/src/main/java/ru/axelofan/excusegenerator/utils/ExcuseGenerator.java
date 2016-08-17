@@ -11,13 +11,16 @@ public class ExcuseGenerator {
     private String[] general = { "Хочу закрыть вопрос поскорее", "Сам уже устал ждать", "Я бы с радостью уже все сделал", "Сам в шоке, что так всё получилось", "Сам в шоке, что так всё затягивается", "Сам не ожидал таких событий", "Надо поскорее решить этот вопрос", "Надо уже закрыть этот вопрос", "Надо уже решить эту проблему", "Я, конечно, очень извиняюсь, что так вышло"};
 
     private Random randomGenerator = new Random();
+    private StringBuilder builder = new StringBuilder();
 
     private String choose(String[] array) {
         return array[randomGenerator.nextInt(array.length)];
     }
 
     public String getExcuse(String name) {
-        String excuse = choose(hello)+". "+choose(fail)+". "+choose(action)+" "+choose(date)+". "+choose(general)+".";
+        builder.setLength(0);
+        builder.append(choose(hello)).append(". ").append(choose(fail)).append(". ").append(choose(action)).append(" ").append(choose(date)).append(". ").append(choose(general)).append(".");
+        String excuse = builder.toString();
         if (name.equals("")) return excuse.replace("[name]",choose(names));
         else return excuse.replace("[name]",name);
     }
